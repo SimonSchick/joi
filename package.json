@@ -5,6 +5,7 @@
   "homepage": "https://github.com/hapijs/joi",
   "repository": "git://github.com/hapijs/joi",
   "main": "lib/index.js",
+  "typings": "typings/index.d.ts",
   "keywords": [
     "hapi",
     "schema",
@@ -21,12 +22,14 @@
   "devDependencies": {
     "code": "5.x.x",
     "hapitoc": "1.x.x",
-    "lab": "15.x.x"
+    "lab": "15.x.x",
+    "typescript": "^3.1.1"
   },
   "scripts": {
-    "test": "lab -t 100 -a code -L",
+    "test": "lab -t 100 -a code -L && npm run test-typings",
     "test-debug": "lab -a code",
     "test-cov-html": "lab -r html -o coverage.html -a code",
+    "test-typings": "tsc -p typings",
     "toc": "hapitoc",
     "version": "npm run toc && git add API.md README.md"
   },
